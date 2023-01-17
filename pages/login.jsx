@@ -4,6 +4,8 @@ import ImageWithSpace from "../src/components/layout/ImageWithSpace"
 import H1 from "../src/components/tipografia/H1"
 import H2 from "../src/components/tipografia/H2"
 import H4 from "../src/components/tipografia/H4"
+import Button from "../src/components/inputs/Button"
+import Input from "../src/components/inputs/Input"
 
 const FormContainer = styled.div `
 margin-top: 60px;
@@ -33,9 +35,9 @@ function LoginPage (){
       <FormContainer>
         <H2>entre em sua conta</H2>
         <Form>
-          <input placeholder="email ou usuario"type="email" />
-          <input placeholder="senha "type="password" />
-          <button>entrar</button>
+          <Input label="email ou usuario"type="email" />
+          <Input label="senha "type="password" />
+          <Button>entrar</Button>
         </Form>
         <Text>
           não possui uma conta? <a href="https://campinagrande.pb.gov.br/"> faça seu cadastro</a>
