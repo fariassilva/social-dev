@@ -32,7 +32,17 @@ padding: 30px 50px;
 }
 display: flex;
 flex-direction: column;
-justify-content: center;
+
+heignt: cal(100vh - 60px);
+overflow-y: auto;
+
+&:before, &:after {
+
+  content: '';
+  margin: auto;
+
+
+}
 `
 
 function ImageWithSpace({children,image}){

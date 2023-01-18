@@ -26,7 +26,7 @@ text-align: center;
 
 `
 
-function LoginPage (){
+function SignupPage (){
 
   return(
 
@@ -34,18 +34,21 @@ function LoginPage (){
       <H1>#SocialDev</H1>
       <H4>todo que acontece no mundo dev,está aqui</H4>
       <FormContainer>
-        <H2>entre em sua conta</H2>
+        <H2>Crie sua conta</H2>
         <Form>
-          <Input label="email ou usuario"type="email" />
-          <Input label="senha "type="password" />
+          <Input label="Nome"/>
+          <Input label="Sobrenome"/>
+          <Input label="Usuário"/>
+          <Input label="Email ou Usuario"type="email" />
+          <Input label="Senha "type="password" />
           <Button>entrar</Button>
         </Form>
         <Text>
-          não possui uma conta? <Link href="/Signup"> faça seu cadastro</Link>
+          já possui uma conta? <Link href="/login"> faça seu login</Link>
         </Text>
       </FormContainer>
     </ImageWithSpace>
 
   )
 }
-export default LoginPage
+export default SignupPage
