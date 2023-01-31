@@ -10,6 +10,7 @@ const databaseMiddleware = async (req,res,next) => {
     if(!global.mongoose){
       global.mongoose = await mongoose.connect(MONGODB_URI) 
       
+      
     }
 
   }catch (err) {

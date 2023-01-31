@@ -1,6 +1,40 @@
-export const signupUpser = (body) => {
+import { hashPassword, comparePasword } from "../../utils/bcrypt"
 
-  console.log("SIGNUP USER")
-  console.log(body)
-  return true
+import User from './user.model'
+
+export const signupUpser =async (body) => {
+  try {
+    const user = {
+
+      ...body,
+      password: hashPassword(body.password)
+    }
+    
+    const  dbUser = await User.create(user)
+    return dbUser
+
+
+  } catch (err) {
+    throw err
+  }
+ 
+}
+export  const login = async  (body) =>{
+try {
+  const user = await User.findOne({
+    $or:[
+      {email: body.userOrEmail},
+      {user:body.userOrEmail}
+    ]
+  })
+  if(!user) throw new Error('not found')
+  const passwordIsCorrect = comparePasword(body.password, user.password)
+  if(!passwordIsCorrect)  throw new Error('password incorrect')
+
+  return user
+} catch (err) {
+  throw err
+  
+}
+
 }
